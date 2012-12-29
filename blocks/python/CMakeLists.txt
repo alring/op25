@@ -5,7 +5,7 @@ endif()
 
 GR_PYTHON_INSTALL(
     FILES
-    __init__.py
+    qa_op25.py 
     DESTINATION ${GR_PYTHON_DIR}/op25
 )
 

@@ -1,5 +1,4 @@
 /* -*- c++ -*- */
-
 #define OP25_API
 
 %include "gnuradio.i"                   // the common stuff
@@ -15,9 +14,8 @@
 
 
 %include "op25_fsk4_demod_ff.h"
-GR_SWIG_BLOCK_MAGIC2(op25, fsk4_demod_ff);
+GR_SWIG_BLOCK_MAGIC(op25, fsk4_demod_ff);
 %include "op25_fsk4_slicer_fb.h"
-GR_SWIG_BLOCK_MAGIC2(op25, fsk4_slicer_fb);
+GR_SWIG_BLOCK_MAGIC(op25, fsk4_slicer_fb);
 %include "op25_decoder_bf.h"
-GR_SWIG_BLOCK_MAGIC2(op25, decoder_bf);
-
+GR_SWIG_BLOCK_MAGIC(op25, decoder_bf);
