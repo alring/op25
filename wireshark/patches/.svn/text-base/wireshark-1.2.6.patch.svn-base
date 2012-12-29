@@ -1,0 +1,76 @@
+diff -Naur wireshark-1.2.6/configure.in wireshark-1.2.6-p25/configure.in
+--- wireshark-1.2.6/configure.in	2010-01-28 02:12:50.000000000 +1000
++++ wireshark-1.2.6-p25/configure.in	2010-03-05 11:13:33.000000000 +1000
+@@ -1712,6 +1712,7 @@
+   plugins/m2m/Makefile
+   plugins/mate/Makefile
+   plugins/opcua/Makefile
++  plugins/p25/Makefile
+   plugins/profinet/Makefile
+   plugins/sercosiii/Makefile
+   plugins/stats_tree/Makefile
+diff -Naur wireshark-1.2.6/Makefile.am wireshark-1.2.6-p25/Makefile.am
+--- wireshark-1.2.6/Makefile.am	2010-01-28 02:12:51.000000000 +1000
++++ wireshark-1.2.6-p25/Makefile.am	2010-03-05 11:13:33.000000000 +1000
+@@ -254,6 +254,7 @@
+ 	-dlopen plugins/m2m/m2m.la \
+ 	-dlopen plugins/mate/mate.la \
+ 	-dlopen plugins/opcua/opcua.la \
++	-dlopen plugins/p25/p25cai.la \
+ 	-dlopen plugins/profinet/profinet.la \
+ 	-dlopen plugins/sercosiii/sercosiii.la \
+ 	-dlopen plugins/stats_tree/stats_tree.la \
+diff -Naur wireshark-1.2.6/packaging/nsis/Makefile.nmake wireshark-1.2.6-p25/packaging/nsis/Makefile.nmake
+--- wireshark-1.2.6/packaging/nsis/Makefile.nmake	2010-01-28 02:12:46.000000000 +1000
++++ wireshark-1.2.6-p25/packaging/nsis/Makefile.nmake	2010-03-05 11:13:33.000000000 +1000
+@@ -55,6 +55,7 @@
+ 	../../plugins/m2m/m2m.dll \
+ 	../../plugins/mate/mate.dll \
+ 	../../plugins/opcua/opcua.dll \
++	../../plugins/p25/p25.dll \
+ 	../../plugins/profinet/profinet.dll \
+ 	../../plugins/sercosiii/sercosiii.dll \
+ 	../../plugins/stats_tree/stats_tree.dll \
+diff -Naur wireshark-1.2.6/packaging/nsis/wireshark.nsi wireshark-1.2.6-p25/packaging/nsis/wireshark.nsi
+--- wireshark-1.2.6/packaging/nsis/wireshark.nsi	2010-01-28 02:12:46.000000000 +1000
++++ wireshark-1.2.6-p25/packaging/nsis/wireshark.nsi	2010-03-05 11:13:33.000000000 +1000
+@@ -821,6 +821,7 @@
+ File "..\..\plugins\irda\irda.dll"
+ File "..\..\plugins\m2m\m2m.dll"
+ File "..\..\plugins\opcua\opcua.dll"
++File "..\..\plugins\p25\p25.dll"
+ File "..\..\plugins\profinet\profinet.dll"
+ File "..\..\plugins\sercosiii\sercosiii.dll"
+ File "..\..\plugins\unistim\unistim.dll"
+diff -Naur wireshark-1.2.6/plugins/Makefile.am wireshark-1.2.6-p25/plugins/Makefile.am
+--- wireshark-1.2.6/plugins/Makefile.am	2010-01-28 02:11:01.000000000 +1000
++++ wireshark-1.2.6-p25/plugins/Makefile.am	2010-03-05 11:13:33.000000000 +1000
+@@ -32,6 +32,7 @@
+ 	m2m \
+ 	mate \
+ 	opcua \
++	p25 \
+ 	profinet \
+ 	sercosiii \
+ 	stats_tree \
+diff -Naur wireshark-1.2.6/plugins/Makefile.nmake wireshark-1.2.6-p25/plugins/Makefile.nmake
+--- wireshark-1.2.6/plugins/Makefile.nmake	2010-01-28 02:11:01.000000000 +1000
++++ wireshark-1.2.6-p25/plugins/Makefile.nmake	2010-03-05 11:13:33.000000000 +1000
+@@ -57,6 +57,9 @@
+ 	cd opcua
+ 	$(MAKE) /$(MAKEFLAGS) -f Makefile.nmake $(PLUGIN_TARGET)
+ 	cd ..
++	cd p25
++	$(MAKE) /$(MAKEFLAGS) -f Makefile.nmake $(PLUGIN_TARGET)
++	cd ..
+ 	cd profinet
+ 	$(MAKE) /$(MAKEFLAGS) -f Makefile.nmake $(PLUGIN_TARGET)
+ 	cd ..
+@@ -94,6 +97,7 @@
+ 	xcopy plugins\m2m\*.dll $(INSTALL_DIR)\plugins\$(VERSION) /d
+ 	xcopy plugins\mate\*.dll $(INSTALL_DIR)\plugins\$(VERSION) /d
+ 	xcopy plugins\opcua\*.dll $(INSTALL_DIR)\plugins\$(VERSION) /d
++	xcopy plugins\p25\*.dll $(INSTALL_DIR)\plugins\$(VERSION) /d
+ 	xcopy plugins\profinet\*.dll $(INSTALL_DIR)\plugins\$(VERSION) /d
+ 	xcopy plugins\sercosiii\*.dll $(INSTALL_DIR)\plugins\$(VERSION) /d
+ 	xcopy plugins\stats_tree\*.dll $(INSTALL_DIR)\plugins\$(VERSION) /d

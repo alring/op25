@@ -1,0 +1,103 @@
+
+INSTALLATION
+============
+
+1. Obtain the app_rpt source tree 
+
+2. Copy chan_usrp.c and chan_usrp.h to subdir "asterisk/channels/"
+
+3. Build and install asterisk app_rpt; confirm chan_usrp is included
+
+4. In your /etc/asterisk/rpt.conf file create a new, numbered node entry
+   for each separate discrete radio voice channel, such as for example:
+
+[000]
+rxchannel = usrp/192.168.2.55:34001:32001
+duplex = 2
+scheduler=scheduler
+functions = functions-repeater
+hangtime=0
+authlevel = 0
+
+[001]
+rxchannel = usrp/192.168.2.55:34002:32002
+duplex = 2
+scheduler=scheduler
+functions = functions-repeater
+hangtime=0
+authlevel = 0
+
+    Its invoked as usrp/HISIP:HISPORT[:MYPORT]       
+    HISIP is the IP address (or FQDN) of the GR app
+    HISPORT is the UDP socket of the GR app
+    MYPORT (optional) is the UDP socket that Asterisk listens on
+             for this channel   
+
+5. You can use the "usrp show" command from within the asterisk CLI.
+   Another handy command is "rpt playback" to initiate a transmission on
+   any desired channel.
+
+6. Here is a recipe for "dumb PTT" or "hotline" operation.  This is the most
+   basic bread-and-butter remote TX setup using a standard (channel bank)
+   interface.
+
+   A standard FXS port on the channel bank is defined in zapata.conf with
+
+signalling=fxo_ls
+immediate=yes
+context = chan1
+channel => 1
+
+   An offhook (PTT) signal from user equipment on the FXS channel bank port 
+   (due to the immmediate=yes) starts processing in extensions.conf:
+
+[chan1]
+exten => s,1,Dial(local/1@radio/n)
+   This jumps to exten "1" in
+[radio]
+exten => 1,1,rpt(000|D)
+exten => 2,1,rpt(001|D)
+exten => 3,1,rpt(002|D)
+exten => 4,1,rpt(003|D)
+exten => 5,1,rpt(004|D)
+
+   So the call resulting from the offhook (PTT) signal is routed to 
+   extension "1" in context [radio] where it's connected to the desired
+   repeater node (channel).  If the GR app is running it will initiate
+   radio transmission.  An onhook signal on the FXS channel bank port
+   causes the end of the transmission by ending the asterisk call in
+   progress*. The hangtime=0 setting in rpt.conf was used to reduce the
+   tail delay in this setup.
+
+   *The end of the transmission may be modified however, for example when
+   app_rpt appends an "ID" or if a "timeout" occurs ;-)
+
+7. Don't have a channel bank?  Here is a poor man's DIY alternative [hack]
+   http://www.lightlink.com/mhp/x100pem/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The apps are located in repeater/python
+
+usrp_rx
+=======
+This app captures several P25 (e.g., trunked system) channels simultaneously,
+writing separate, parallel voice data streams for each channel to app_rpt,
+(or, optionally, writing all received data to Wireshark).  It has been
+optimized for LSM/CQPSK.
+
+Example
+ [precise calibration is important]
+ [say kalibrate suggests that +2000 would be a good calibration value]
+./usrp_rx.py -RA -g 32 -H 192.168.2.6  -c 2000 -d 5
+
+Before running the app you must edit the lines containing the system
+frequencies and center (tuning) frequency.  The total span of these
+frequencies can't exceed 1 MHz (without program changes).
+
+usrp_tx
+=======
+This app transmits several simultaneous parallel P25 channels under control
+of app_rpt.
+
+Example
+./usrp_tx.py -f 53.175e6 -n 3 -e

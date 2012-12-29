@@ -1,0 +1,2 @@
+This package implements signal processing blocks to support the
+reception and transmission APCO Project 25 using GNU Radio.

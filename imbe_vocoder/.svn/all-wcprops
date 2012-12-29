@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/269/trunk/imbe_vocoder
+END
+configure.ac
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/222/trunk/imbe_vocoder/configure.ac
+END
+Makefile.common
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/187/trunk/imbe_vocoder/Makefile.common
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/187/trunk/imbe_vocoder/AUTHORS
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/187/trunk/imbe_vocoder/INSTALL
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/222/trunk/imbe_vocoder/ChangeLog
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/187/trunk/imbe_vocoder/COPYING
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/222/trunk/imbe_vocoder/Makefile.am
+END
+NEWS
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/187/trunk/imbe_vocoder/NEWS
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/187/trunk/imbe_vocoder/README
+END
+bootstrap
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/222/trunk/imbe_vocoder/bootstrap
+END

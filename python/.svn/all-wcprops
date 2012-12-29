@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/306/trunk/python
+END
+op25_c4fm_mod.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/271/trunk/python/op25_c4fm_mod.py
+END
+audio_imbe.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/285/trunk/python/audio_imbe.py
+END
+cqpsk-mod.py
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/139/trunk/python/cqpsk-mod.py
+END
+usrp2_c4fm_rx_nogui.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/285/trunk/python/usrp2_c4fm_rx_nogui.py
+END
+audio_p25_rx.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/306/trunk/python/audio_p25_rx.py
+END
+op25_tx.py
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/282/trunk/python/op25_tx.py
+END
+file_c4fm_rx_nogui.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/285/trunk/python/file_c4fm_rx_nogui.py
+END
+audio_p25_tx.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/168/trunk/python/audio_p25_tx.py
+END
+cqpsk-demod.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/139/trunk/python/cqpsk-demod.py
+END
+usrp_p25_rx_gl.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/285/trunk/python/usrp_p25_rx_gl.py
+END
+op25_remote_tx.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/226/trunk/python/op25_remote_tx.py
+END
+usrp_c4fm_rx_nogui.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/285/trunk/python/usrp_c4fm_rx_nogui.py
+END
+magsq_psd.py
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/297/trunk/python/magsq_psd.py
+END
+pcm_fsk4_oscope.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/215/trunk/python/pcm_fsk4_oscope.py
+END
+usrp_c4fm_tx_nogui.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/285/trunk/python/usrp_c4fm_tx_nogui.py
+END
+alsa_p25_rx.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/285/trunk/python/alsa_p25_rx.py
+END
+alsa_fsk4_oscope.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/92/trunk/python/alsa_fsk4_oscope.py
+END
+op25_audio_tx.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/226/trunk/python/op25_audio_tx.py
+END
+cqpsk.py
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/139/trunk/python/cqpsk.py
+END
+cqpsk-demod-file.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/300/trunk/python/cqpsk-demod-file.py
+END
+audio_capture.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/159/trunk/python/audio_capture.py
+END
+fsk4_recv_file.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/285/trunk/python/fsk4_recv_file.py
+END
+p25craft.py
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/295/trunk/python/p25craft.py
+END
+usrp_p25_rx.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/285/trunk/python/usrp_p25_rx.py
+END

@@ -1,0 +1,31 @@
+
+(C) Copyright 2010, KA1RBI
+
+This package contains implementations for a number of loosely related
+GR blocks and related utilities including:
+	- improved ctcss squelch block
+	- general pipe block (gr seems to fight this)
+	- p25 framer / assembler block
+	- fsk4 slicer with settable decision points
+	- Combined Gardner/Costas loop block 
+	- RS and BCH routines
+
+-------------------------------------------------------------------------
+
+Two key internal interfaces are used throughout the system:
+
+1. 88-bit IMBE voice codewords (input to Pavel's decoder and output by the 
+encoder; also referred to as the u[] vectors) are represented as printable
+"hex" strings of the format
+     "%03x %03x %03x %03x %03x %03x %03x %03x\n"   (each string is 32 bytes)
+When sent via UDP, the nine voice codewords (from the LDU1/2) result in a
+packet payload size of 288 (9 * 32).
+
+2. The "wireshark" packet interface: P25 frames are sent as packed bytes,
+four symbols (8 bits) per byte, one UDP packet per P25 frame.  The P25
+frame sync (FS) is aligned starting at data offset zero of each UDP packet,
+occupying the first six bytes.  Example: total data length of voice packets
+= 216 bytes (864 symbols * 0.25 bytes/symbol).   All decoded symbol dibits
+(including status symbols) are included.  When unpacked into symbols (dibits)
+this format is the 4800 baud stream that would be applied to a FM/PSK
+modulator stage or would be as received out of a FSK4 decoder/slicer.

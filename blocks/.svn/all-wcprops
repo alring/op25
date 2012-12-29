@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/304/trunk/blocks
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/283/trunk/blocks/README
+END
+bootstrap
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/283/trunk/blocks/bootstrap
+END
+configure.ac
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/283/trunk/blocks/configure.ac
+END
+Makefile.common
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/303/trunk/blocks/Makefile.common
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/283/trunk/blocks/AUTHORS
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/303/trunk/blocks/INSTALL
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/283/trunk/blocks/ChangeLog
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/283/trunk/blocks/COPYING
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/283/trunk/blocks/Makefile.am
+END
+NEWS
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/283/trunk/blocks/NEWS
+END

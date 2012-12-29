@@ -1,0 +1,66 @@
+diff -Naur a/configure.in b/configure.in
+--- a/configure.in	2011-01-12 05:24:24.000000000 +1000
++++ b/configure.in	2011-01-18 08:00:20.000000000 +1000
+@@ -1890,6 +1890,7 @@
+   plugins/m2m/Makefile
+   plugins/mate/Makefile
+   plugins/opcua/Makefile
++  plugins/p25/Makefile
+   plugins/profinet/Makefile
+   plugins/sercosiii/Makefile
+   plugins/stats_tree/Makefile
+diff -Naur a/Makefile.am b/Makefile.am
+--- a/Makefile.am	2011-01-12 05:24:25.000000000 +1000
++++ b/Makefile.am	2011-01-18 08:00:20.000000000 +1000
+@@ -275,6 +275,7 @@
+ 	-dlopen plugins/m2m/m2m.la \
+ 	-dlopen plugins/mate/mate.la \
+ 	-dlopen plugins/opcua/opcua.la \
++	-dlopen plugins/p25/p25cai.la \
+ 	-dlopen plugins/profinet/profinet.la \
+ 	-dlopen plugins/sercosiii/sercosiii.la \
+ 	-dlopen plugins/stats_tree/stats_tree.la \
+diff -Naur a/packaging/nsis/Makefile.nmake b/packaging/nsis/Makefile.nmake
+--- a/packaging/nsis/Makefile.nmake	2011-01-12 05:24:20.000000000 +1000
++++ b/packaging/nsis/Makefile.nmake	2011-01-18 08:00:20.000000000 +1000
+@@ -58,6 +58,7 @@
+ 	../../plugins/m2m/m2m.dll \
+ 	../../plugins/mate/mate.dll \
+ 	../../plugins/opcua/opcua.dll \
++	../../plugins/p25/p25.dll \
+ 	../../plugins/profinet/profinet.dll \
+ 	../../plugins/sercosiii/sercosiii.dll \
+ 	../../plugins/stats_tree/stats_tree.dll \
+diff -Naur a/packaging/nsis/wireshark.nsi b/packaging/nsis/wireshark.nsi
+--- a/packaging/nsis/wireshark.nsi	2011-01-12 05:24:20.000000000 +1000
++++ b/packaging/nsis/wireshark.nsi	2011-01-18 08:00:20.000000000 +1000
+@@ -887,6 +887,7 @@
+ File "..\..\plugins\irda\irda.dll"
+ File "..\..\plugins\m2m\m2m.dll"
+ File "..\..\plugins\opcua\opcua.dll"
++File "..\..\plugins\p25\p25.dll"
+ File "..\..\plugins\profinet\profinet.dll"
+ File "..\..\plugins\sercosiii\sercosiii.dll"
+ File "..\..\plugins\unistim\unistim.dll"
+diff -Naur a/plugins/Makefile.am b/plugins/Makefile.am
+--- a/plugins/Makefile.am	2011-01-12 05:23:13.000000000 +1000
++++ b/plugins/Makefile.am	2011-01-18 08:00:20.000000000 +1000
+@@ -33,6 +33,7 @@
+ 	m2m \
+ 	mate \
+ 	opcua \
++	p25 \
+ 	profinet \
+ 	sercosiii \
+ 	stats_tree \
+diff -Naur a/plugins/Makefile.nmake b/plugins/Makefile.nmake
+--- a/plugins/Makefile.nmake	2011-01-12 05:23:13.000000000 +1000
++++ b/plugins/Makefile.nmake	2011-01-18 08:06:04.000000000 +1000
+@@ -17,6 +17,7 @@
+ 	m2m         \
+ 	mate        \
+ 	opcua       \
++	p25         \
+ 	profinet    \
+ 	sercosiii   \
+ 	stats_tree  \
